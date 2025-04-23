@@ -77,9 +77,6 @@ export function renderProjects() {
   });
 }
 
-
-
-import { getProjectById, getActiveProjectId } from './projectManager';
 import { formatDate } from '../utils/helpers';
 
 export function renderTodos() {
