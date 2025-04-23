@@ -77,8 +77,6 @@ export function renderProjects() {
   });
 }
 
-import { formatDate } from '../utils/helpers';
-
 export function renderTodos() {
   const list = document.getElementById('todo-list');
   const project = getProjectById(getActiveProjectId());
