@@ -1,11 +1,15 @@
 // src/app/utils.js
 
-// Helper to generate unique IDs
+// ─────────────────────────────
+// Unique ID Generator
+// ─────────────────────────────
 export const generateUniqueId = () => {
   return '_' + Math.random().toString(36).substr(2, 9);
 };
 
-// Helper to debounce functions (optional utility)
+// ─────────────────────────────
+// Debounce Utility
+// ─────────────────────────────
 export const debounce = (func, delay) => {
   let timeout;
   return (...args) => {
@@ -14,25 +18,42 @@ export const debounce = (func, delay) => {
   };
 };
 
-// Date formatting helpers (optional utilities)
+// ─────────────────────────────
+// Date Utilities
+// ─────────────────────────────
 export const formatDate = (dateString) => {
+  if (!dateString) return '';
+  const date = new Date(dateString);
+  if (isNaN(date)) return dateString;
+
   const options = { year: 'numeric', month: 'short', day: 'numeric' };
-  return new Date(dateString).toLocaleDateString(undefined, options);
+  return date.toLocaleDateString(undefined, options);
 };
 
 export const parseDate = (str) => {
-  return new Date(str);
+  const date = new Date(str);
+  return isNaN(date) ? null : date;
 };
 
-// ✅ Fix: Add localStorage helpers
-
+// ─────────────────────────────
+// localStorage Helpers
+// ─────────────────────────────
 const STORAGE_KEY = 'todo-projects';
 
 export const saveProjectsToStorage = (projects) => {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(projects));
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(projects));
+  } catch (error) {
+    console.error('Failed to save projects:', error);
+  }
 };
 
 export const loadProjectsFromStorage = () => {
-  const stored = localStorage.getItem(STORAGE_KEY);
-  return stored ? JSON.parse(stored) : null;
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    return stored ? JSON.parse(stored) : [];
+  } catch (error) {
+    console.error('Failed to load projects:', error);
+    return [];
+  }
 };

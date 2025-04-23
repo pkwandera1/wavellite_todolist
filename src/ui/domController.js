@@ -77,20 +77,25 @@ export function renderProjects() {
   });
 }
 
-export function renderTodos() {
-  const list = document.getElementById('todo-list');
+
+
+export function renderTodos(todosList = null, isCompleted = false) {
   const project = getProjectById(getActiveProjectId());
+  if (!project) return;
+
+  document.getElementById('project-title').textContent = isCompleted ? '✅ Completed Todos' : project.name;
+
+  const list = document.getElementById('todo-list');
   list.innerHTML = '';
 
-  if (!project || !project.todos) return;
+  const todos = todosList || project.todos.filter(todo => !todo.completed); // only active todos by default
 
-  project.todos.forEach(todo => {
+  todos.forEach(todo => {
     const li = document.createElement('li');
     li.classList.add('todo');
-    li.setAttribute('draggable', 'true');
+    li.draggable = !isCompleted;
     li.dataset.id = todo.id;
 
-    const isCompleted = todo.completed;
     const titleHtml = isCompleted ? `<s>${todo.title}</s>` : todo.title;
 
     li.innerHTML = `
@@ -98,23 +103,11 @@ export function renderTodos() {
       <div class="todo-content">
         <strong>${titleHtml}</strong><br/>
         ${todo.description}<br/>
-        <small>${formatDate(todo.dueDate)}</small><br/>
-        <div style="margin-top: 4px;">
-          ${
-            isCompleted
-              ? `<button class="delete-completed-btn" data-id="${todo.id}">🗑️</button>`
-              : `
-                <button class="edit-todo-btn" data-id="${todo.id}">✏️</button>
-                <button class="delete-todo-btn" data-id="${todo.id}">🗑️</button>
-                <button class="mark-complete-btn" data-id="${todo.id}">✅</button>
-              `
-          }
-        </div>
+        <small>${formatDate(todo.dueDate)}</small>
+        ${isCompleted ? `<button class="delete-completed-btn" data-id="${todo.id}">🗑️</button>` : `<button class="mark-complete-btn" data-id="${todo.id}">✅</button>`}
       </div>
     `;
-
     list.appendChild(li);
   });
 }
-
 

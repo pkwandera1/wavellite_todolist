@@ -80,12 +80,6 @@ body {
   font-weight: bold;
 }
 
-#project-list #view-completed-btn.active {
-  background-color: magenta;
-  color: black;
-  font-weight: bold;
-}
-
 /* Project input */
 #new-project-name {
   padding: 0.4rem;
