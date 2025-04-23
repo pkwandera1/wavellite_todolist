@@ -103,12 +103,6 @@ body {
   font-weight: bold;
 }
 
-#project-list #view-completed-btn.active {
-  background-color: magenta;
-  color: black;
-  font-weight: bold;
-}
-
 /* Project input */
 #new-project-name {
   padding: 0.4rem;
@@ -225,7 +219,7 @@ body {
 .hidden {
   display: none;
 }
-`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAAA,wBAAwB;AACxB;EACE,SAAS;EACT,UAAU;EACV,sBAAsB;AACxB;;AAEA;EACE,mCAAmC;EACnC,aAAa;EACb,aAAa;EACb,YAAY;EACZ,uBAAuB;AACzB;AACA;EACE,aAAa;AACf;AACA,YAAY;AACZ;EACE,YAAY;EACZ,sBAAsB;EACtB,YAAY;EACZ,aAAa;EACb,aAAa;EACb,sBAAsB;EACtB,2BAA2B;EAC3B,aAAa;EACb,+BAA+B;AACjC;;AAEA;EACE,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,eAAe;EACf,eAAe;EACf,eAAe;EACf,aAAa;EACb,iBAAiB;AACnB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,cAAc;EACd,gBAAgB;EAChB,kBAAkB;AACpB;;AAEA;EACE,gBAAgB;EAChB,mBAAmB;AACrB;;AAEA;EACE,aAAa;EACb,mBAAmB;EACnB,8BAA8B;EAC9B,eAAe;EACf,eAAe;EACf,kBAAkB;EAClB,2BAA2B;EAC3B,2BAA2B;EAC3B,mBAAmB;AACrB;;AAEA;EACE,sBAAsB;AACxB;;AAEA;EACE,sBAAsB;AACxB;;AAEA;EACE,yBAAyB;EACzB,YAAY;EACZ,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;EACzB,YAAY;EACZ,iBAAiB;AACnB;;AAEA,kBAAkB;AAClB;EACE,eAAe;EACf,YAAY;EACZ,kBAAkB;EAClB,qBAAqB;AACvB;;;AAGA;EACE,yBAAyB;AAC3B;;AAEA,cAAc;AACd;EACE,YAAY;EACZ,aAAa;EACb,uBAAuB;EACvB,YAAY;EACZ,gBAAgB;AAClB;;AAEA;EACE,WAAW;EACX,mBAAmB;AACrB;;AAEA,cAAc;AACd;EACE,aAAa;EACb,eAAe;EACf,SAAS;EACT,mBAAmB;AACrB;;AAEA;;;EAGE,eAAe;EACf,eAAe;AACjB;;AAEA;EACE,yBAAyB;EACzB,YAAY;EACZ,YAAY;EACZ,kBAAkB;EAClB,eAAe;AACjB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA,eAAe;AACf;EACE,gBAAgB;AAClB;;AAEA;EACE,aAAa;EACb,oBAAoB;EACpB,qBAAqB;EACrB,kBAAkB;EAClB,gBAAgB;EAChB,yBAAyB;EACzB,YAAY;EACZ,qCAAqC;AACvC;;AAEA;EACE,UAAU;AACZ;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,kBAAkB;AACpB;;AAEA;EACE,iBAAiB;AACnB;;AAEA;EACE,gBAAgB;EAChB,YAAY;AACd;;AAEA;EACE,eAAe;EACf,MAAM;EACN,OAAO;EACP,WAAW;EACX,YAAY;EACZ,iCAAiC;EACjC,aAAa;EACb,mBAAmB;EACnB,uBAAuB;EACvB,WAAW;AACb;;AAEA;EACE,uBAAuB;EACvB,YAAY;EACZ,aAAa;EACb,kBAAkB;EAClB,gBAAgB;EAChB,4BAA4B;AAC9B;;AAEA;EACE,aAAa;AACf","sourcesContent":["/* Reset & Base Styles */\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: 'Segoe UI', sans-serif;\n  display: flex;\n  height: 100vh;\n  color: white;\n  background-color: black;\n}\n#app {\n  display: flex;\n}\n/* Sidebar */\n.sidebar {\n  width: 240px;\n  background-color: #111;\n  color: white;\n  padding: 1rem;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  height: 100vh;\n  border-right: 2px solid magenta;\n}\n\n#add-project-btn {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-size: 20px;\n  cursor: pointer;\n  padding: 0.3rem;\n  margin-top: 0;\n  user-select: none;\n}\n\n#add-project-btn:hover {\n  color: magenta;\n}\n\n.sidebar h2 {\n  color: magenta;\n  margin-bottom: 0;\n  text-align: center;\n}\n\n#project-list {\n  list-style: none;\n  margin-bottom: 1rem;\n}\n\n#project-list .project-item, #view-completed-btn {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0.5rem;\n  cursor: pointer;\n  border-radius: 5px;\n  transition: background 0.2s;\n  background-color: #f182d56b;\n  margin: 5px 0 5px 0;\n}\n\n#project-list .project-item:hover {\n  background-color: #333;\n}\n\n#view-completed-btn:hover {\n  background-color: #333;\n}\n\n#project-list .project-item.active {\n  background-color: magenta;\n  color: black;\n  font-weight: bold;\n}\n\n#project-list #view-completed-btn.active {\n  background-color: magenta;\n  color: black;\n  font-weight: bold;\n}\n\n/* Project input */\n#new-project-name {\n  padding: 0.4rem;\n  border: none;\n  border-radius: 4px;\n  margin-bottom: 0.5rem;\n}\n\n\n#add-project-btn:hover {\n  background-color: #ff33cc;\n}\n\n/* Main Area */\n.main {\n  flex-grow: 1;\n  padding: 2rem;\n  background-color: white;\n  color: black;\n  overflow-y: auto;\n}\n\n.main h2 {\n  color: blue;\n  margin-bottom: 1rem;\n}\n\n/* Todo Form */\n#todo-form {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 1rem;\n  margin-bottom: 1rem;\n}\n\n#todo-form input,\n#todo-form select,\n#todo-form button {\n  padding: 0.5rem;\n  font-size: 1rem;\n}\n\n#todo-form button {\n  background-color: magenta;\n  color: black;\n  border: none;\n  border-radius: 4px;\n  cursor: pointer;\n}\n\n#todo-form button:hover {\n  background-color: #ff33cc;\n}\n\n/* Todo Items */\n#todo-list {\n  list-style: none;\n}\n\n.todo {\n  display: flex;\n  align-items: stretch;\n  margin-bottom: 0.5rem;\n  border-radius: 5px;\n  overflow: hidden;\n  background-color: #f2f2f2;\n  color: black;\n  box-shadow: 0 1px 3px rgba(0,0,0,0.2);\n}\n\n.left-border {\n  width: 6px;\n}\n\n.left-border.high {\n  background: red;\n}\n\n.left-border.medium {\n  background: orange;\n}\n\n.left-border.low {\n  background: green;\n}\n\n.todo-content {\n  padding: 0.75rem;\n  flex-grow: 1;\n}\n\n.modal {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0,0,0,0.6);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 10;\n}\n\n.modal-content {\n  background-color: white;\n  color: black;\n  padding: 2rem;\n  border-radius: 8px;\n  min-width: 300px;\n  box-shadow: 0 0 15px magenta;\n}\n\n.hidden {\n  display: none;\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAAA,wBAAwB;AACxB;EACE,SAAS;EACT,UAAU;EACV,sBAAsB;AACxB;;AAEA;EACE,mCAAmC;EACnC,aAAa;EACb,aAAa;EACb,YAAY;EACZ,uBAAuB;AACzB;AACA;EACE,aAAa;AACf;AACA,YAAY;AACZ;EACE,YAAY;EACZ,sBAAsB;EACtB,YAAY;EACZ,aAAa;EACb,aAAa;EACb,sBAAsB;EACtB,2BAA2B;EAC3B,aAAa;EACb,+BAA+B;AACjC;;AAEA;EACE,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,eAAe;EACf,eAAe;EACf,eAAe;EACf,aAAa;EACb,iBAAiB;AACnB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,cAAc;EACd,gBAAgB;EAChB,kBAAkB;AACpB;;AAEA;EACE,gBAAgB;EAChB,mBAAmB;AACrB;;AAEA;EACE,aAAa;EACb,mBAAmB;EACnB,8BAA8B;EAC9B,eAAe;EACf,eAAe;EACf,kBAAkB;EAClB,2BAA2B;EAC3B,2BAA2B;EAC3B,mBAAmB;AACrB;;AAEA;EACE,sBAAsB;AACxB;;AAEA;EACE,sBAAsB;AACxB;;AAEA;EACE,yBAAyB;EACzB,YAAY;EACZ,iBAAiB;AACnB;;AAEA,kBAAkB;AAClB;EACE,eAAe;EACf,YAAY;EACZ,kBAAkB;EAClB,qBAAqB;AACvB;;;AAGA;EACE,yBAAyB;AAC3B;;AAEA,cAAc;AACd;EACE,YAAY;EACZ,aAAa;EACb,uBAAuB;EACvB,YAAY;EACZ,gBAAgB;AAClB;;AAEA;EACE,WAAW;EACX,mBAAmB;AACrB;;AAEA,cAAc;AACd;EACE,aAAa;EACb,eAAe;EACf,SAAS;EACT,mBAAmB;AACrB;;AAEA;;;EAGE,eAAe;EACf,eAAe;AACjB;;AAEA;EACE,yBAAyB;EACzB,YAAY;EACZ,YAAY;EACZ,kBAAkB;EAClB,eAAe;AACjB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA,eAAe;AACf;EACE,gBAAgB;AAClB;;AAEA;EACE,aAAa;EACb,oBAAoB;EACpB,qBAAqB;EACrB,kBAAkB;EAClB,gBAAgB;EAChB,yBAAyB;EACzB,YAAY;EACZ,qCAAqC;AACvC;;AAEA;EACE,UAAU;AACZ;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,kBAAkB;AACpB;;AAEA;EACE,iBAAiB;AACnB;;AAEA;EACE,gBAAgB;EAChB,YAAY;AACd;;AAEA;EACE,eAAe;EACf,MAAM;EACN,OAAO;EACP,WAAW;EACX,YAAY;EACZ,iCAAiC;EACjC,aAAa;EACb,mBAAmB;EACnB,uBAAuB;EACvB,WAAW;AACb;;AAEA;EACE,uBAAuB;EACvB,YAAY;EACZ,aAAa;EACb,kBAAkB;EAClB,gBAAgB;EAChB,4BAA4B;AAC9B;;AAEA;EACE,aAAa;AACf","sourcesContent":["/* Reset & Base Styles */\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: 'Segoe UI', sans-serif;\n  display: flex;\n  height: 100vh;\n  color: white;\n  background-color: black;\n}\n#app {\n  display: flex;\n}\n/* Sidebar */\n.sidebar {\n  width: 240px;\n  background-color: #111;\n  color: white;\n  padding: 1rem;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  height: 100vh;\n  border-right: 2px solid magenta;\n}\n\n#add-project-btn {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-size: 20px;\n  cursor: pointer;\n  padding: 0.3rem;\n  margin-top: 0;\n  user-select: none;\n}\n\n#add-project-btn:hover {\n  color: magenta;\n}\n\n.sidebar h2 {\n  color: magenta;\n  margin-bottom: 0;\n  text-align: center;\n}\n\n#project-list {\n  list-style: none;\n  margin-bottom: 1rem;\n}\n\n#project-list .project-item, #view-completed-btn {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0.5rem;\n  cursor: pointer;\n  border-radius: 5px;\n  transition: background 0.2s;\n  background-color: #f182d56b;\n  margin: 5px 0 5px 0;\n}\n\n#project-list .project-item:hover {\n  background-color: #333;\n}\n\n#view-completed-btn:hover {\n  background-color: #333;\n}\n\n#project-list .project-item.active {\n  background-color: magenta;\n  color: black;\n  font-weight: bold;\n}\n\n/* Project input */\n#new-project-name {\n  padding: 0.4rem;\n  border: none;\n  border-radius: 4px;\n  margin-bottom: 0.5rem;\n}\n\n\n#add-project-btn:hover {\n  background-color: #ff33cc;\n}\n\n/* Main Area */\n.main {\n  flex-grow: 1;\n  padding: 2rem;\n  background-color: white;\n  color: black;\n  overflow-y: auto;\n}\n\n.main h2 {\n  color: blue;\n  margin-bottom: 1rem;\n}\n\n/* Todo Form */\n#todo-form {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 1rem;\n  margin-bottom: 1rem;\n}\n\n#todo-form input,\n#todo-form select,\n#todo-form button {\n  padding: 0.5rem;\n  font-size: 1rem;\n}\n\n#todo-form button {\n  background-color: magenta;\n  color: black;\n  border: none;\n  border-radius: 4px;\n  cursor: pointer;\n}\n\n#todo-form button:hover {\n  background-color: #ff33cc;\n}\n\n/* Todo Items */\n#todo-list {\n  list-style: none;\n}\n\n.todo {\n  display: flex;\n  align-items: stretch;\n  margin-bottom: 0.5rem;\n  border-radius: 5px;\n  overflow: hidden;\n  background-color: #f2f2f2;\n  color: black;\n  box-shadow: 0 1px 3px rgba(0,0,0,0.2);\n}\n\n.left-border {\n  width: 6px;\n}\n\n.left-border.high {\n  background: red;\n}\n\n.left-border.medium {\n  background: orange;\n}\n\n.left-border.low {\n  background: green;\n}\n\n.todo-content {\n  padding: 0.75rem;\n  flex-grow: 1;\n}\n\n.modal {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0,0,0,0.6);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 10;\n}\n\n.modal-content {\n  background-color: white;\n  color: black;\n  padding: 2rem;\n  border-radius: 8px;\n  min-width: 300px;\n  box-shadow: 0 0 15px magenta;\n}\n\n.hidden {\n  display: none;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -925,20 +919,25 @@ function renderProjects() {
   });
 }
 
-function renderTodos() {
-  const list = document.getElementById('todo-list');
+
+
+function renderTodos(todosList = null, isCompleted = false) {
   const project = (0,_app_projectManager__WEBPACK_IMPORTED_MODULE_0__.getProjectById)((0,_app_projectManager__WEBPACK_IMPORTED_MODULE_0__.getActiveProjectId)());
+  if (!project) return;
+
+  document.getElementById('project-title').textContent = isCompleted ? '✅ Completed Todos' : project.name;
+
+  const list = document.getElementById('todo-list');
   list.innerHTML = '';
 
-  if (!project || !project.todos) return;
+  const todos = todosList || project.todos.filter(todo => !todo.completed); // only active todos by default
 
-  project.todos.forEach(todo => {
+  todos.forEach(todo => {
     const li = document.createElement('li');
     li.classList.add('todo');
-    li.setAttribute('draggable', 'true');
+    li.draggable = !isCompleted;
     li.dataset.id = todo.id;
 
-    const isCompleted = todo.completed;
     const titleHtml = isCompleted ? `<s>${todo.title}</s>` : todo.title;
 
     li.innerHTML = `
@@ -946,25 +945,13 @@ function renderTodos() {
       <div class="todo-content">
         <strong>${titleHtml}</strong><br/>
         ${todo.description}<br/>
-        <small>${(0,_utils_helpers__WEBPACK_IMPORTED_MODULE_2__.formatDate)(todo.dueDate)}</small><br/>
-        <div style="margin-top: 4px;">
-          ${
-            isCompleted
-              ? `<button class="delete-completed-btn" data-id="${todo.id}">🗑️</button>`
-              : `
-                <button class="edit-todo-btn" data-id="${todo.id}">✏️</button>
-                <button class="delete-todo-btn" data-id="${todo.id}">🗑️</button>
-                <button class="mark-complete-btn" data-id="${todo.id}">✅</button>
-              `
-          }
-        </div>
+        <small>${(0,_utils_helpers__WEBPACK_IMPORTED_MODULE_2__.formatDate)(todo.dueDate)}</small>
+        ${isCompleted ? `<button class="delete-completed-btn" data-id="${todo.id}">🗑️</button>` : `<button class="mark-complete-btn" data-id="${todo.id}">✅</button>`}
       </div>
     `;
-
     list.appendChild(li);
   });
 }
-
 
 
 
@@ -1042,71 +1029,109 @@ function initEventListeners() {
     });
   }
 
-  // Drag and Drop
-  let dragged;
   const todoList = document.getElementById('todo-list');
+  let dragged;
+  
+  // ✅ Drag and Drop functionality
   if (todoList) {
     todoList.addEventListener('dragstart', (e) => {
       dragged = e.target;
     });
-
+  
     todoList.addEventListener('dragover', (e) => {
       e.preventDefault();
     });
-
+  
     todoList.addEventListener('drop', (e) => {
       e.preventDefault();
       if (e.target.closest('li') && dragged) {
         const list = [...document.querySelectorAll('#todo-list li')];
         const draggedIndex = list.indexOf(dragged);
         const targetIndex = list.indexOf(e.target.closest('li'));
-
+  
         const todos = (0,_app_projectManager__WEBPACK_IMPORTED_MODULE_0__.getProjects)()
           .find(p => p.id === (0,_app_projectManager__WEBPACK_IMPORTED_MODULE_0__.getActiveProjectId)())
           .todos.slice();
-
+  
         const [moved] = todos.splice(draggedIndex, 1);
         todos.splice(targetIndex, 0, moved);
-
+  
         (0,_app_todoManager__WEBPACK_IMPORTED_MODULE_1__.reorderTodos)((0,_app_projectManager__WEBPACK_IMPORTED_MODULE_0__.getActiveProjectId)(), todos);
         (0,_storage_localStorage__WEBPACK_IMPORTED_MODULE_2__.saveProjects)((0,_app_projectManager__WEBPACK_IMPORTED_MODULE_0__.getProjects)());
         (0,_domController__WEBPACK_IMPORTED_MODULE_3__.renderTodos)();
       }
     });
-  }
-
-  todoList.addEventListener('click', (e) => {
-    const id = e.target.dataset.id;
-
-    if (e.target.classList.contains('mark-complete-btn')) {
-      const project = (0,_app_projectManager__WEBPACK_IMPORTED_MODULE_0__.getProjectById)((0,_app_projectManager__WEBPACK_IMPORTED_MODULE_0__.getActiveProjectId)());
-      const todo = project.todos.find(t => t.id === id);
-      if (todo) {
-        todo.completed = true;
-        (0,_storage_localStorage__WEBPACK_IMPORTED_MODULE_2__.saveProjects)((0,_app_projectManager__WEBPACK_IMPORTED_MODULE_0__.getProjects)());
-        (0,_domController__WEBPACK_IMPORTED_MODULE_3__.renderTodos)(); // Re-render active todos
-      }
-    }
-
-    if (e.target.classList.contains('delete-completed-btn')) {
-      const project = (0,_app_projectManager__WEBPACK_IMPORTED_MODULE_0__.getProjectById)((0,_app_projectManager__WEBPACK_IMPORTED_MODULE_0__.getActiveProjectId)());
-      project.todos = project.todos.filter(t => t.id !== id);
-      (0,_storage_localStorage__WEBPACK_IMPORTED_MODULE_2__.saveProjects)((0,_app_projectManager__WEBPACK_IMPORTED_MODULE_0__.getProjects)());
-
-      const completedTodos = project.todos.filter(todo => todo.completed);
-      (0,_domController__WEBPACK_IMPORTED_MODULE_3__.renderTodos)(completedTodos, true); // Render only completed
-    }
-  });
   
+    // ✅ Click actions (mark complete, edit, delete)
+    todoList.addEventListener('click', (e) => {
+      const id = e.target.dataset.id;
+      const project = (0,_app_projectManager__WEBPACK_IMPORTED_MODULE_0__.getProjectById)((0,_app_projectManager__WEBPACK_IMPORTED_MODULE_0__.getActiveProjectId)());
+  
+      if (!id || !project) return;
+  
+      // ✅ Mark as complete
+      if (e.target.classList.contains('mark-complete-btn')) {
+        const todo = project.todos.find(t => t.id === id);
+        if (todo) {
+          todo.completed = true;
+          (0,_storage_localStorage__WEBPACK_IMPORTED_MODULE_2__.saveProjects)((0,_app_projectManager__WEBPACK_IMPORTED_MODULE_0__.getProjects)());
+          (0,_domController__WEBPACK_IMPORTED_MODULE_3__.renderTodos)(); // Show remaining active todos
+        }
+      }
+  
+      // 🗑️ Delete completed
+      if (e.target.classList.contains('delete-completed-btn')) {
+        project.todos = project.todos.filter(t => t.id !== id);
+        (0,_storage_localStorage__WEBPACK_IMPORTED_MODULE_2__.saveProjects)((0,_app_projectManager__WEBPACK_IMPORTED_MODULE_0__.getProjects)());
+  
+        const completedTodos = project.todos.filter(todo => todo.completed);
+        (0,_domController__WEBPACK_IMPORTED_MODULE_3__.renderTodos)(completedTodos, true); // Show updated completed list
+      }
+  
+      // 📝 Edit todo
+      if (e.target.classList.contains('edit-todo-btn')) {
+        const todo = project.todos.find(t => t.id === id);
+        if (todo) {
+          const newTitle = prompt('Edit title:', todo.title);
+          const newDescription = prompt('Edit description:', todo.description);
+          const newDueDate = prompt('Edit due date (YYYY-MM-DD):', todo.dueDate);
+          const newPriority = prompt('Edit priority (low, medium, high):', todo.priority);
+  
+          if (newTitle && newDueDate && newPriority) {
+            todo.title = newTitle;
+            todo.description = newDescription;
+            todo.dueDate = newDueDate;
+            todo.priority = newPriority;
+            (0,_storage_localStorage__WEBPACK_IMPORTED_MODULE_2__.saveProjects)((0,_app_projectManager__WEBPACK_IMPORTED_MODULE_0__.getProjects)());
+  
+            const isCompleted = todo.completed;
+            const todosToRender = project.todos.filter(t => t.completed === isCompleted);
+            (0,_domController__WEBPACK_IMPORTED_MODULE_3__.renderTodos)(todosToRender, isCompleted);
+          }
+        }
+      }
+  
+      // 🗑️ Delete active todo
+      if (e.target.classList.contains('delete-todo-btn')) {
+        project.todos = project.todos.filter(t => t.id !== id);
+        (0,_storage_localStorage__WEBPACK_IMPORTED_MODULE_2__.saveProjects)((0,_app_projectManager__WEBPACK_IMPORTED_MODULE_0__.getProjects)());
+  
+        const activeTodos = project.todos.filter(todo => !todo.completed);
+        (0,_domController__WEBPACK_IMPORTED_MODULE_3__.renderTodos)(activeTodos, false);
+      }
+    });
+  }
+  
+  // ✅ View completed button
   const viewCompletedBtn = document.getElementById('view-completed-btn');
   if (viewCompletedBtn) {
     viewCompletedBtn.addEventListener('click', () => {
       const project = (0,_app_projectManager__WEBPACK_IMPORTED_MODULE_0__.getProjectById)((0,_app_projectManager__WEBPACK_IMPORTED_MODULE_0__.getActiveProjectId)());
       const completedTodos = project.todos.filter(todo => todo.completed);
-
-      (0,_domController__WEBPACK_IMPORTED_MODULE_3__.renderTodos)(completedTodos, true); // true means "rendering completed"
+      (0,_domController__WEBPACK_IMPORTED_MODULE_3__.renderTodos)(completedTodos, true);
     });
   }
+  
 
 
   const sidebar = document.getElementById('sidebar');
